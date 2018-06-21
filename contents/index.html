@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The lamest table, ever</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <style>
-    body {
-      padding: 3em;
-    }
+    <meta charset="UTF-8">
+    <title>The lamest table, ever</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 3em;
+        }
 
-    table {
-      max-width: 10em;
-    }
+        table {
+            max-width: 10em;
+        }
 
 
-  </style>
+    </style>
 </head>
 <body>
 <!-- behövs en add-knapp -->
-<button onclick="addFunction()" type="button" class="btn btn-info">Add</button>
+<button onclick="addFunction()" class="btn btn-info">Add</button>
 
 <table class="table" id="myTable">
 
@@ -27,21 +27,21 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <script>
+    var counter = 1;
+    var table = document.querySelector('#myTable');
     function addFunction() {
-        var table = document.getElementById("myTable");
         var row = table.insertRow(-1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-        var rowCount = $('table#myTable tr:last').index() + 1;
-        cell1.innerHTML = rowCount;
-        cell2.innerHTML = '<button onclick="removeFunction()" type="button" class="btn btn-danger">Remove</button>';
+        cell1.innerHTML = counter++;
+        cell2.innerHTML = '<button onclick="removeFunction(this.parentNode.parentNode.rowIndex)" type="button" class="btn btn-danger">Remove</button>';
     }
-    function removeFunction() {
-        document.getElementById("myTable").deleteRow(0);
+    function removeFunction(i) {
+        table.deleteRow(i);
     }
 </script>
-
-<!-- I valet mellan (a) individuella eventhanterare på varje knapp och
+<!-- I valet mellan (a) individue
+lla eventhanterare på varje knapp och
      (b) en enda delegerad eventhanterare på hela tabellen -- vilket
      alternativ föredrar du, och varför? Kan man göra det på båda sätten?
      Finns det några fördelar med alternativet du inte valde? Diskutera. -->
