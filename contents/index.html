@@ -27,13 +27,13 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <script>
-    var counter = 1;
+    var rowCount = 1;
     var table = document.querySelector('#myTable');
     function addFunction() {
         var row = table.insertRow(-1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-        cell1.innerHTML = counter++;
+        cell1.innerHTML = rowCount++;
         cell2.innerHTML = '<button onclick="removeFunction(this.parentNode.parentNode.rowIndex)" type="button" class="btn btn-danger">Remove</button>';
     }
     function removeFunction(i) {
