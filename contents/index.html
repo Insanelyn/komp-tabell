@@ -40,11 +40,24 @@
         table.deleteRow(i);
     }
 </script>
-<!-- I valet mellan (a) individue
-lla eventhanterare på varje knapp och
-     (b) en enda delegerad eventhanterare på hela tabellen -- vilket
-     alternativ föredrar du, och varför? Kan man göra det på båda sätten?
-     Finns det några fördelar med alternativet du inte valde? Diskutera. -->
+<!--
+
+
+Jag har i tidigare programeringsspråk föredragit att använda mig av en delegerad eventhanterare när jag kodar.
+Det sparar prestanda, är lättare att testa och koden ser snyggare ut. Jag tycker även att koden blir lättare att felsöka.
+I dettta fallet valde jag att använda mig av individuell eventhantering. När jag kodade kändes det rimligt att låt koden skapa en nyknapp på varje rad och då eventhantera samtidigt.
+När man börjar koda tycker jag att det är enklare att använda en indiduell hantering innan men har lyckats greppa kodstrukturen. Under sommaren ska jag lära mig att bli bekväm med
+olika sorters eventhanterare och inte bara individuella, i JS. Det är viktigt att lära sig använda de metoder som drar mindre minne, så som delegerad eventhantering, då stora
+applikationer kan bli väldigt tungkörda om man använder metoder som drar mer minne.
+
+Man kan absolut använda båda sorterna när man kodar, men jag anser itne att det är god standard att göra det eftersom koden då blir svårare att läsa.
+
+-->
+
+
+
+
+
 
 </body>
 </html>
